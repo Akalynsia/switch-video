@@ -1,10 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./globals.css";
 
 const VideoSwitcher = () => {
   const [selectedVideo, setSelectedVideo] = useState("video1");
-
+  useEffect(() => {
+    setSelectedVideo("VKMw2it8dQY");
+  }, []);
   const handleVideoChange = (event) => {
     setSelectedVideo(event.target.value);
   };
@@ -20,19 +22,21 @@ const VideoSwitcher = () => {
   return (
     <div className="video-container">
       <h1>Video Switcher</h1>
-      {videoData.map((video, index) => (
-        <div className="radio-container" key={index}>
-          <label>
-            <input
-              type="radio"
-              value={video.value}
-              checked={selectedVideo === video.value}
-              onChange={handleVideoChange}
-            />
-            {video.label}
-          </label>
-        </div>
-      ))}
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        {videoData.map((video, index) => (
+          <div className="radio-container" key={index}>
+            <label>
+              <input
+                type="radio"
+                value={video.value}
+                checked={selectedVideo === video.value}
+                onChange={handleVideoChange}
+              />
+              {video.label}
+            </label>
+          </div>
+        ))}
+      </div>
       <div className="video-box">
         {selectedVideo && (
           <iframe

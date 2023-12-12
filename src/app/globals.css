@@ -8,15 +8,19 @@
 video {
   margin-bottom: 20px;
 }
-
-.radio-container {
-  display: flex;
-  justify-content: center;
-}
-
 .radio-container label {
+  display: flex;
   margin-right: 10px;
 }
 .video-box {
   margin-top: 20px;
+}
+.radio-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.radio-container label {
+  margin-right: 10px;
 }
